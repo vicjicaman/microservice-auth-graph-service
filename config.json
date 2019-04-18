@@ -1,0 +1,7 @@
+{
+  "dependencies": [{
+    "moduleid": "microservice-auth-graph-config",
+    "baselineid": "master",
+    "version": "file:./../microservice-auth-graph-config"
+  }]
+}
