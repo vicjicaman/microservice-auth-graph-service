@@ -1,7 +1,11 @@
 {
-  "dependencies": [{
-    "moduleid": "microservice-auth-graph-config",
-    "baselineid": "master",
-    "version": "file:./../microservice-auth-graph-config"
-  }]
+  "namespace": "github.com:vicjicaman/microservices.git",
+  "dependencies": {
+    "microservice-config": {
+      "version": "file:./../microservice-config"
+    },
+    "microservice-auth-graph-config": {
+      "version": "file:./../microservice-auth-graph-config"
+    }
+  }
 }

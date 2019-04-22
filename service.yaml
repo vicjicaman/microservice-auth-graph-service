@@ -13,4 +13,4 @@ spec:
   ports:
     -
       name: microservice-auth-graph-port
-      port: '${SERVICE_PORT@microservice-auth-graph:1.0.0-master}'
+      port: ${SERVICE_PORT@microservice-auth-graph-config}
