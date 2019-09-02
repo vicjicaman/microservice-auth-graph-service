@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "microservice-config": {
+      "url": "github.com:vicjicaman/microservice-config.git",
+      "version": "file:./../microservice-config"
+    },
+    "microservice-auth-config": {
+      "url": "github.com:vicjicaman/microservice-auth-config.git",
+      "version": "file:./../microservice-auth-config"
+    },
+    "microservice-auth-graph-config": {
+      "url": "github.com:vicjicaman/microservice-auth-graph-config.git",
+      "version": "file:./../microservice-auth-graph-config"
+    }
+  }
+}

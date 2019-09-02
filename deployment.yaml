@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-auth-graph-deployment
+  namespace: ${NAMESPACE@microservice-config}
+  labels:
+    app: microservice-auth-graph-deployment
+    moduleid: microservice-auth-graph-service
+    version: 1.0.0-master
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: microservice-auth-graph-deployment
+  template:
+    metadata:
+      labels:
+        app: microservice-auth-graph-deployment
+    spec:
+      containers:
+        -
+          name: app
+          image: 919446158824.dkr.ecr.us-east-1.amazonaws.com/microservice-auth-graph-container:1.0.0-master
+          env:
+            -
+              name: SERVICE_URL_PATH_GRAPHQL
+              value: ${SERVICE_URL_PATH_GRAPHQL@microservice-auth-graph-config}
+            -
+              name: SERVICE_URL_PATH_EVENTS
+              value: ${SERVICE_URL_PATH_EVENTS@microservice-auth-graph-config}
+            -
+              name: SERVICE_PORT
+              value: '${SERVICE_PORT@microservice-auth-graph-config}'
+          ports:
+            -
+              containerPort: ${SERVICE_PORT@microservice-auth-graph-config}
