@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: microservice-auth-graph-service
-  namespace: ${NAMESPACE@microservice-config}
+  namespace: '${NAMESPACE@microservice-config}'
   labels:
     moduleid: microservice-auth-graph-service
     version: 1.0.0-master
@@ -13,4 +13,4 @@ spec:
   ports:
     -
       name: microservice-auth-graph-port
-      port: ${SERVICE_PORT@microservice-auth-graph-config}
+      port: '${SERVICE_PORT@microservice-auth-graph-config}'
