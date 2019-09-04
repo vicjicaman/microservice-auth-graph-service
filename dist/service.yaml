@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: microservice-auth-graph-service
-  namespace: microservices-namespace
+  namespace: 'microservices-namespace'
   labels:
     moduleid: microservice-auth-graph-service
-    version: 1.0.0-master
+    version: 1.70.1-auth-stateful-prod
 spec:
   type: NodePort
   selector:
@@ -13,4 +13,4 @@ spec:
   ports:
     -
       name: microservice-auth-graph-port
-      port: 4000
+      port: '4000'

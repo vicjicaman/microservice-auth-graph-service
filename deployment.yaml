@@ -6,7 +6,7 @@ metadata:
   labels:
     app: microservice-auth-graph-deployment
     moduleid: microservice-auth-graph-service
-    version: 1.70.0-master
+    version: 1.70.1-auth-stateful-prod
 spec:
   replicas: 3
   selector:
@@ -20,7 +20,7 @@ spec:
       containers:
         -
           name: app
-          image: '919446158824.dkr.ecr.us-east-1.amazonaws.com/microservice-auth-graph-container:1.70.0-master'
+          image: '919446158824.dkr.ecr.us-east-1.amazonaws.com/microservice-auth-graph-container:1.70.1-auth-stateful-prod'
           env:
             -
               name: SERVICE_URL_PATH_GRAPHQL
