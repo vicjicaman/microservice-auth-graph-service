@@ -6,7 +6,7 @@ metadata:
   labels:
     app: microservice-auth-graph-deployment
     moduleid: microservice-auth-graph-service
-    version: 1.70.1-auth-service-prod
+    version: 1.70.0-master
 spec:
   replicas: 3
   selector:
@@ -20,7 +20,7 @@ spec:
       containers:
         -
           name: app
-          image: '919446158824.dkr.ecr.us-east-1.amazonaws.com/microservice-auth-graph-container:1.70.1-auth-service-prod'
+          image: '919446158824.dkr.ecr.us-east-1.amazonaws.com/microservice-auth-graph-container:1.70.0-master'
           env:
             -
               name: SERVICE_URL_PATH_GRAPHQL
@@ -34,3 +34,6 @@ spec:
           ports:
             -
               containerPort: '${SERVICE_PORT@microservice-auth-graph-config}'
+      'containers|0|(?:':
+        '+):(':
+          +): 1.70.0-master
