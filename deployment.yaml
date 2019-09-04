@@ -34,6 +34,3 @@ spec:
           ports:
             -
               containerPort: '${SERVICE_PORT@microservice-auth-graph-config}'
-      'containers|0|(?:':
-        '+):(':
-          +): 1.70.0-master
