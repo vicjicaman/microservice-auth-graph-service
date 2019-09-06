@@ -13,4 +13,4 @@ spec:
   ports:
     -
       name: microservice-auth-graph-port
-      port: '4000'
+      port: 4000

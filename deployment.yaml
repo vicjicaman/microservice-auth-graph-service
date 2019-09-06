@@ -33,4 +33,4 @@ spec:
               value: '${SERVICE_PORT@microservice-auth-graph-config}'
           ports:
             -
-              containerPort: '${SERVICE_PORT@microservice-auth-graph-config}'
+              containerPort: ${SERVICE_PORT@microservice-auth-graph-config}

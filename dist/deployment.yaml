@@ -33,4 +33,4 @@ spec:
               value: '4000'
           ports:
             -
-              containerPort: '4000'
+              containerPort: 4000
