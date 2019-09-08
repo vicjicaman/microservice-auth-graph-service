@@ -8,7 +8,7 @@ metadata:
     moduleid: microservice-auth-graph-service
     version: 1.70.1-master
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: microservice-auth-graph-deployment
@@ -20,17 +20,23 @@ spec:
       containers:
         -
           name: app
-          image: '919446158824.dkr.ecr.us-east-1.amazonaws.com/microservice-auth-graph-container:1.70.1-master'
+          image: 'repoflow/microservice-auth-graph-container:1.70.1-master'
           env:
             -
-              name: SERVICE_URL_PATH_GRAPHQL
-              value: '/auth/backend/graphql'
+              name: PATH_URL_GRAPH
+              value: 'auth/graphql'
             -
-              name: SERVICE_URL_PATH_EVENTS
-              value: '/auth/backend/events'
+              name: PATH_URL_EVENTS
+              value: 'auth/events'
             -
-              name: SERVICE_PORT
+              name: PORT
               value: '4000'
+            -
+              name: URL_DATA
+              value: 'microservice-auth-data.microservices-namespace'
+            -
+              name: PORT_DATA
+              value: '27017'
           ports:
             -
-              containerPort: '4000'
+              containerPort: 4000
