@@ -32,11 +32,17 @@ spec:
               name: INTERNAL_PORT_GRAPH
               value: '${INTERNAL_PORT_GRAPH@microservice-auth-config}'
             -
-              name: INTERNAL_HOST_DATA
-              value:  '${INTERNAL_HOST_DATA@microservice-auth-config}'
+              name: INTERNAL_URL_DATA
+              value:  '${INTERNAL_URL_DATA@microservice-auth-config}'
             -
-              name: INTERNAL_PORT_DATA
-              value: '${INTERNAL_PORT_DATA@microservice-auth-config}'
+              name: INTERNAL_HOST_CACHE
+              value:  '${INTERNAL_HOST_CACHE@microservice-auth-config}'
+            -
+              name: INTERNAL_PORT_CACHE
+              value:  '${INTERNAL_PORT_CACHE@microservice-auth-config}'
+            -
+              name: SECRET_PASSWORD_CACHE
+              value: 'SECRET_PASSWORD_CACHE'
           ports:
             -
               containerPort: ${INTERNAL_PORT_GRAPH@microservice-auth-config}

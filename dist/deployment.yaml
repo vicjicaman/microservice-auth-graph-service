@@ -32,11 +32,17 @@ spec:
               name: INTERNAL_PORT_GRAPH
               value: '4000'
             -
-              name: INTERNAL_HOST_DATA
-              value:  'auth-data-service.microservices-namespace'
+              name: INTERNAL_URL_DATA
+              value:  'auth-data-service.microservices-namespace:27017/auth'
             -
-              name: INTERNAL_PORT_DATA
-              value: '27017'
+              name: INTERNAL_HOST_CACHE
+              value:  'auth-cache-service.microservices-namespace'
+            -
+              name: INTERNAL_PORT_CACHE
+              value:  '6379'
+            -
+              name: SECRET_PASSWORD_CACHE
+              value: 'SECRET_PASSWORD_CACHE'
           ports:
             -
               containerPort: 4000
