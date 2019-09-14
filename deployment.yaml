@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ${DEPLOYMENT_GRAPH@microservice-auth-config}
+  name: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
   namespace: '${NAMESPACE@microservice-config}'
   labels:
-    app: ${DEPLOYMENT_GRAPH@microservice-auth-config}
+    app: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
     moduleid: microservice-auth-graph-service
-    version: 1.70.1-master
+    version: 1.70.0-dev-auth-service-prod
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ${DEPLOYMENT_GRAPH@microservice-auth-config}
+      app: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
   template:
     metadata:
       labels:
-        app: ${DEPLOYMENT_GRAPH@microservice-auth-config}
+        app: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
     spec:
       containers:
         -
           name: app
-          image: 'repoflow/microservice-auth-graph-container:1.70.1-master'
+          image: 'repoflow/microservice-auth-graph-container:1.70.0-dev-auth-service-prod'
           env:
             -
               name: ROUTE_GRAPH
@@ -33,16 +33,16 @@ spec:
               value: '${INTERNAL_PORT_GRAPH@microservice-auth-config}'
             -
               name: INTERNAL_URL_DATA
-              value:  '${INTERNAL_URL_DATA@microservice-auth-config}'
+              value: '${INTERNAL_URL_DATA@microservice-auth-config}'
             -
               name: INTERNAL_HOST_CACHE
-              value:  '${INTERNAL_HOST_CACHE@microservice-auth-config}'
+              value: '${INTERNAL_HOST_CACHE@microservice-auth-config}'
             -
               name: INTERNAL_PORT_CACHE
-              value:  '${INTERNAL_PORT_CACHE@microservice-auth-config}'
+              value: '${INTERNAL_PORT_CACHE@microservice-auth-config}'
             -
               name: SECRET_PASSWORD_CACHE
-              value: 'SECRET_PASSWORD_CACHE'
+              value: SECRET_PASSWORD_CACHE
           ports:
             -
-              containerPort: ${INTERNAL_PORT_GRAPH@microservice-auth-config}
+              containerPort: '${INTERNAL_PORT_GRAPH@microservice-auth-config}'

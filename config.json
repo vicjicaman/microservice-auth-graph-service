@@ -6,7 +6,7 @@
     },
     "microservice-auth-config": {
       "url": "github.com:vicjicaman/microservice-auth-config.git",
-      "version": "file:./../microservice-auth-config"
+      "version": "1.70.0-dev-auth-service-prod"
     }
   }
 }
