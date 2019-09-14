@@ -1,45 +1,45 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-graph-deployment
-  namespace: microservices-namespace
+  name: 'auth-graph-deployment'
+  namespace: 'microservices-namespace'
   labels:
-    app: auth-graph-deployment
+    app: 'auth-graph-deployment'
     moduleid: microservice-auth-graph-service
-    version: 1.70.2-master
+    version: 1.70.0-auth-base-cache-data-prod
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: auth-graph-deployment
+      app: 'auth-graph-deployment'
   template:
     metadata:
       labels:
-        app: auth-graph-deployment
+        app: 'auth-graph-deployment'
     spec:
       containers:
         -
           name: app
-          image: 'repoflow/microservice-auth-graph-container:1.70.2-master'
+          image: 'repoflow/microservice-auth-graph-container:1.70.0-auth-base-cache-data-prod'
           env:
             -
               name: ROUTE_GRAPH
-              value: /auth/backend/graphql
+              value: '/auth/backend/graphql'
             -
               name: ROUTE_EVENTS
-              value: /auth/backend/events
+              value: '/auth/backend/events'
             -
               name: INTERNAL_PORT_GRAPH
-              value: '4000'
+              value: 4000
             -
               name: INTERNAL_URL_DATA
               value: 'auth-data-service.microservices-namespace:27017/auth'
             -
               name: INTERNAL_HOST_CACHE
-              value: auth-cache-service.microservices-namespace
+              value: 'auth-cache-service.microservices-namespace'
             -
               name: INTERNAL_PORT_CACHE
-              value: '6379'
+              value: 6379
             -
               name: SECRET_PASSWORD_CACHE
               value: SECRET_PASSWORD_CACHE
