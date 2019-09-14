@@ -1,36 +1,48 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: microservice-auth-graph-deployment
+  name: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
   namespace: '${NAMESPACE@microservice-config}'
   labels:
-    app: microservice-auth-graph-deployment
+    app: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
     moduleid: microservice-auth-graph-service
-    version: 1.70.1-master
+    version: 1.70.2-master
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: microservice-auth-graph-deployment
+      app: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
   template:
     metadata:
       labels:
-        app: microservice-auth-graph-deployment
+        app: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
     spec:
       containers:
         -
           name: app
-          image: '919446158824.dkr.ecr.us-east-1.amazonaws.com/microservice-auth-graph-container:1.70.1-master'
+          image: 'repoflow/microservice-auth-graph-container:1.70.2-master'
           env:
             -
-              name: SERVICE_URL_PATH_GRAPHQL
-              value: '${SERVICE_URL_PATH_GRAPHQL@microservice-auth-graph-config}'
+              name: ROUTE_GRAPH
+              value: '${ROUTE_GRAPH@microservice-auth-config}'
             -
-              name: SERVICE_URL_PATH_EVENTS
-              value: '${SERVICE_URL_PATH_EVENTS@microservice-auth-graph-config}'
+              name: ROUTE_EVENTS
+              value: '${ROUTE_EVENTS@microservice-auth-config}'
             -
-              name: SERVICE_PORT
-              value: '${SERVICE_PORT@microservice-auth-graph-config}'
+              name: INTERNAL_PORT_GRAPH
+              value: '${INTERNAL_PORT_GRAPH@microservice-auth-config}'
+            -
+              name: INTERNAL_URL_DATA
+              value: '${INTERNAL_URL_DATA@microservice-auth-config}'
+            -
+              name: INTERNAL_HOST_CACHE
+              value: '${INTERNAL_HOST_CACHE@microservice-auth-config}'
+            -
+              name: INTERNAL_PORT_CACHE
+              value: '${INTERNAL_PORT_CACHE@microservice-auth-config}'
+            -
+              name: SECRET_PASSWORD_CACHE
+              value: SECRET_PASSWORD_CACHE
           ports:
             -
-              containerPort: '${SERVICE_PORT@microservice-auth-graph-config}'
+              containerPort: '${INTERNAL_PORT_GRAPH@microservice-auth-config}'
