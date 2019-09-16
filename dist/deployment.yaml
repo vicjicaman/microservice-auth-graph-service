@@ -43,6 +43,9 @@ spec:
             -
               name: SECRET_PASSWORD_CACHE
               value: SECRET_PASSWORD_CACHE
+            -
+              name: INTERNAL_URL_ACCOUNT_GRAPH
+              value: 'http://account-graph-service.microservices-namespace:4000/graphql'
           ports:
             -
               containerPort: 4000

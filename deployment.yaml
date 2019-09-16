@@ -43,6 +43,9 @@ spec:
             -
               name: SECRET_PASSWORD_CACHE
               value: SECRET_PASSWORD_CACHE
+            -
+              name: INTERNAL_URL_ACCOUNT_GRAPH
+              value: '${INTERNAL_URL_GRAPH@microservice-account-config}'
           ports:
             -
               containerPort: '${INTERNAL_PORT_GRAPH@microservice-auth-config}'
