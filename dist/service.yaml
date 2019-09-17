@@ -5,7 +5,7 @@ metadata:
   namespace: microservices-namespace
   labels:
     moduleid: microservice-auth-graph-service
-    version: 1.70.0-account-page-prod
+    version: 1.70.6-master
 spec:
   type: NodePort
   selector:
