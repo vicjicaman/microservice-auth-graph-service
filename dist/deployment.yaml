@@ -33,10 +33,10 @@ spec:
               value: '4000'
             -
               name: AUTH_CACHE_INTERNAL_HOST
-              value: '${INTERNAL_HOST_CACHE@microservice-auth-cache-config}'
+              value: auth-cache-service.microservices-namespace
             -
               name: AUTH_CACHE_INTERNAL_PORT
-              value: '${INTERNAL_PORT_CACHE@microservice-auth-cache-config}'
+              value: '6379'
             -
               name: AUTH_CACHE_SECRET_PASSWORD
               value: SECRET_PASSWORD_CACHE

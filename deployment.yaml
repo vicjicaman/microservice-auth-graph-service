@@ -33,10 +33,10 @@ spec:
               value: '${INTERNAL_PORT_GRAPH@microservice-auth-config}'
             -
               name: AUTH_CACHE_INTERNAL_HOST
-              value: '${INTERNAL_HOST_CACHE@microservice-auth-cache-config}'
+              value: '${INTERNAL_HOST@microservice-auth-cache-config}'
             -
               name: AUTH_CACHE_INTERNAL_PORT
-              value: '${INTERNAL_PORT_CACHE@microservice-auth-cache-config}'
+              value: '${INTERNAL_PORT@microservice-auth-cache-config}'
             -
               name: AUTH_CACHE_SECRET_PASSWORD
               value: SECRET_PASSWORD_CACHE
