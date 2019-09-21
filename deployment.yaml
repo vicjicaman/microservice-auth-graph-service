@@ -6,7 +6,7 @@ metadata:
   labels:
     app: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
     moduleid: microservice-auth-graph-service
-    version: 1.70.6-master
+    version: 1.70.1-auth-config-info
 spec:
   replicas: 2
   selector:
