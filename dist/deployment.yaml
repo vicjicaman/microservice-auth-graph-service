@@ -6,7 +6,7 @@ metadata:
   labels:
     app: auth-graph-deployment
     moduleid: microservice-auth-graph-service
-    version: 1.70.6-master
+    version: 1.70.7-master
 spec:
   replicas: 2
   selector:
@@ -23,28 +23,25 @@ spec:
           image: 'repoflow/microservice-auth-graph-container:1.70.6-master'
           env:
             -
-              name: ROUTE_GRAPH
+              name: AUTH_ROUTE_GRAPH
               value: /auth/backend/graphql
             -
-              name: ROUTE_EVENTS
+              name: AUTH_ROUTE_EVENTS
               value: /auth/backend/events
             -
-              name: INTERNAL_PORT_GRAPH
+              name: AUTH_INTERNAL_PORT_GRAPH
               value: '4000'
             -
-              name: INTERNAL_URL_DATA
-              value: '${INTERNAL_URL_DATA@microservice-auth-config}'
-            -
-              name: INTERNAL_HOST_CACHE
+              name: AUTH_CACHE_INTERNAL_HOST
               value: auth-cache-service.microservices-namespace
             -
-              name: INTERNAL_PORT_CACHE
+              name: AUTH_CACHE_INTERNAL_PORT
               value: '6379'
             -
-              name: SECRET_PASSWORD_CACHE
+              name: AUTH_CACHE_SECRET_PASSWORD
               value: SECRET_PASSWORD_CACHE
             -
-              name: INTERNAL_URL_ACCOUNT_GRAPH
+              name: AUTH_ACCOUNT_INTERNAL_URL_GRAPH
               value: 'http://account-graph-service.microservices-namespace:4000/graphql'
           ports:
             -

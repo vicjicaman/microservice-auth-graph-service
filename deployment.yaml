@@ -6,7 +6,7 @@ metadata:
   labels:
     app: '${DEPLOYMENT_GRAPH@microservice-auth-config}'
     moduleid: microservice-auth-graph-service
-    version: 1.70.6-master
+    version: 1.70.7-master
 spec:
   replicas: 2
   selector:
@@ -23,28 +23,25 @@ spec:
           image: 'repoflow/microservice-auth-graph-container:1.70.6-master'
           env:
             -
-              name: ROUTE_GRAPH
+              name: AUTH_ROUTE_GRAPH
               value: '${ROUTE_GRAPH@microservice-auth-config}'
             -
-              name: ROUTE_EVENTS
+              name: AUTH_ROUTE_EVENTS
               value: '${ROUTE_EVENTS@microservice-auth-config}'
             -
-              name: INTERNAL_PORT_GRAPH
+              name: AUTH_INTERNAL_PORT_GRAPH
               value: '${INTERNAL_PORT_GRAPH@microservice-auth-config}'
             -
-              name: INTERNAL_URL_DATA
-              value: '${INTERNAL_URL_DATA@microservice-auth-config}'
+              name: AUTH_CACHE_INTERNAL_HOST
+              value: '${INTERNAL_HOST@microservice-auth-cache-config}'
             -
-              name: INTERNAL_HOST_CACHE
-              value: '${INTERNAL_HOST_CACHE@microservice-auth-config}'
+              name: AUTH_CACHE_INTERNAL_PORT
+              value: '${INTERNAL_PORT@microservice-auth-cache-config}'
             -
-              name: INTERNAL_PORT_CACHE
-              value: '${INTERNAL_PORT_CACHE@microservice-auth-config}'
-            -
-              name: SECRET_PASSWORD_CACHE
+              name: AUTH_CACHE_SECRET_PASSWORD
               value: SECRET_PASSWORD_CACHE
             -
-              name: INTERNAL_URL_ACCOUNT_GRAPH
+              name: AUTH_ACCOUNT_INTERNAL_URL_GRAPH
               value: '${INTERNAL_URL_GRAPH@microservice-account-config}'
           ports:
             -
