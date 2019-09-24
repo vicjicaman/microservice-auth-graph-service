@@ -26,9 +26,6 @@ spec:
               name: AUTH_ROUTE_GRAPH
               value: '${ROUTE_GRAPH@microservice-auth-config}'
             -
-              name: AUTH_ROUTE_EVENTS
-              value: '${ROUTE_EVENTS@microservice-auth-config}'
-            -
               name: AUTH_INTERNAL_PORT_GRAPH
               value: '${INTERNAL_PORT_GRAPH@microservice-auth-config}'
             -
@@ -41,7 +38,7 @@ spec:
               name: AUTH_CACHE_SECRET_PASSWORD
               value: SECRET_PASSWORD_CACHE
             -
-              name: AUTH_ACCOUNT_INTERNAL_URL_GRAPH
+              name: ACCOUNT_INTERNAL_URL_GRAPH
               value: '${INTERNAL_URL_GRAPH@microservice-account-config}'
           ports:
             -

@@ -26,9 +26,6 @@ spec:
               name: AUTH_ROUTE_GRAPH
               value: /auth/backend/graphql
             -
-              name: AUTH_ROUTE_EVENTS
-              value: /auth/backend/events
-            -
               name: AUTH_INTERNAL_PORT_GRAPH
               value: '4000'
             -
@@ -41,7 +38,7 @@ spec:
               name: AUTH_CACHE_SECRET_PASSWORD
               value: SECRET_PASSWORD_CACHE
             -
-              name: AUTH_ACCOUNT_INTERNAL_URL_GRAPH
+              name: ACCOUNT_INTERNAL_URL_GRAPH
               value: 'http://account-graph-service.microservices-namespace:4000/graphql'
           ports:
             -
