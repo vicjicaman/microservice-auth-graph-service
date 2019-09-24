@@ -6,7 +6,7 @@ metadata:
   labels:
     app: auth-graph-deployment
     moduleid: microservice-auth-graph-service
-    version: 1.70.0-auth-home-config-prod
+    version: 1.70.8-master
 spec:
   replicas: 2
   selector:
@@ -20,7 +20,7 @@ spec:
       containers:
         -
           name: app
-          image: 'repoflow/microservice-auth-graph-container:1.70.0-auth-home-config-prod'
+          image: 'repoflow/microservice-auth-graph-container:1.70.7-master'
           env:
             -
               name: AUTH_ROUTE_GRAPH
